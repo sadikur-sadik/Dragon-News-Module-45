@@ -2,19 +2,9 @@ import React from 'react';
 
 import LeftSide from "@/components/homepage/news/LeftSide";
 import RightSide from "@/components/homepage/news/RightSide";
-import NewsCard from '@/components/homepage/NewsCard';
+import NewsCard from '@/components/homepage/news/NewsCard';
+import { getCategories,getNewsByCategoryId } from '@/lib/data';
 
-
-const getCategories = async () => {
-
-  const res = await fetch("https://openapi.programming-hero.com/api/news/categories", { next: { revalidate: 5 } });
-  return res.json();
-}
-const getNewsByCategoryId = async (ID) => {
-
-  const res = await fetch(`https://openapi.programming-hero.com/api/news/category/${ID}`, { next: { revalidate: 5 } });
-  return res.json();
-}
 
 
 const NewsCategoryPage = async ({ params }) => {

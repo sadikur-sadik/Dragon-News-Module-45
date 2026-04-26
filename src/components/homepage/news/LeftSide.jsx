@@ -3,7 +3,7 @@ import Link from 'next/link';
 const LeftSide = ({ categories , activeId}) => {
   return (
     <>
-      <div className="text-xl border-b pb-2 border-gray-200">All Catergories</div>
+      <div className="text-xl border-b pb-4 border-gray-200">All Catergories</div>
 
       <ul className="flex flex-col gap-4">
       
