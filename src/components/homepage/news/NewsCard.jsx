@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaRegBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
-
+import Link from "next/link";
 // This is a Server Component by default in the 'app' directory
 const NewsCard = ({ news }) => {
   const {
@@ -18,12 +18,12 @@ const NewsCard = ({ news }) => {
       <div className="flex justify-between items-center bg-gray-50 p-4 border-b">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10">
-            {/* <Image
+            <Image
               src={author?.img}
               alt={author?.name || "Author"}
               fill
               className="rounded-full object-cover"
-            /> */}
+            />
           </div>
           <div>
             <p className="font-semibold text-sm text-gray-800">{author?.name}</p>
@@ -46,14 +46,14 @@ const NewsCard = ({ news }) => {
 
         {/* Optimized Image Container */}
         <div className="relative w-full aspect-video mb-5">
-          {/* <Image
+          <Image
             src={image_url}
             alt={title}
             fill
             className="object-cover rounded-md"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority={news.others_info?.is_todays_pick} // Load faster if it's a top pick
-          /> */}
+          />
         </div>
 
         <p className="text-gray-600 text-sm leading-relaxed">
@@ -61,7 +61,7 @@ const NewsCard = ({ news }) => {
             <>
               {details.slice(0, 280)}...{" "}
               <button className="text-orange-500 font-bold hover:underline ml-1">
-                Read More
+                <Link href={`/news/${news._id}`}>Read More</Link>
               </button>
             </>
           ) : (
