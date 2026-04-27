@@ -5,6 +5,14 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { getNewsByNewsId } from '@/lib/data';
 import RightSide from '@/components/homepage/news/RightSide';
 
+
+
+
+export const metadata = {
+  title: "Dragon News | Details",
+  description: "Best News Portal in Bangladesh",
+};
+
 const NewsPage = async ({ params }) => {
   const { id } = await params;
   const response = await getNewsByNewsId(id);
