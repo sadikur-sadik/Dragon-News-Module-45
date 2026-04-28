@@ -20,6 +20,9 @@ const Navbar = () => {
         <button className="btn bg-gray-900 text-white">
           <Link href="/login" className="p-3">Login</Link>
         </button>
+        <button className="btn bg-gray-900 text-white">
+          <Link href="/register" className="p-3">Register</Link>
+        </button>
       </div>
     </div>
   );
