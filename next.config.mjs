@@ -6,13 +6,19 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
-        port: '',
+        
         
       },
       {
         protocol: 'https',
         hostname: 'i.ibb.co',
-        port: '',
+        
+        
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.shutterstock.com',
+        
         
       },
     ],

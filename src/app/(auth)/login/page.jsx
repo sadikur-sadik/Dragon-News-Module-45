@@ -2,9 +2,12 @@
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const LoginPage = () => {
+
+  const [showPassword , setShowPassword] = useState(false)
 
   const {
     register,
@@ -35,8 +38,8 @@ const LoginPage = () => {
       <div className="rounded-xl bg-white p-4">
         <h2 className="font-bold text-xl mb-5 text-center">Login Your Account</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 space-y-4">
+        <form  onSubmit={handleSubmit(onSubmit)}>
+          <fieldset className="fieldset relative bg-base-200 border-base-300 rounded-box w-xs border p-4 space-y-4">
             {/* <legend className="fieldset-legend">Login Your Account</legend> */}
 
 
@@ -44,8 +47,8 @@ const LoginPage = () => {
             <input {...register("email")} type="email" className="input" placeholder="Enter Email" />
 
             <label className="label">Password</label>
-            <input {...register("password", { required: "At least 4 digits of password is needed" })} type="password" className="input" placeholder="Enter Password" />
-
+            <input {...register("password", { required: "At least 4 digits of password is needed" })} type={showPassword ? "text" : "password"} className="input" placeholder="Enter Password" />
+            <span className="absolute right-7 bottom-23" onClick={()=>setShowPassword(!showPassword)}>{showPassword ? <FaEye/> : <FaEyeSlash/>}</span>
             <button className="btn btn-neutral mt-4">Login</button>
           </fieldset>
         </form>
